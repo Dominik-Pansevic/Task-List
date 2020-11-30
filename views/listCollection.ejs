@@ -1,0 +1,32 @@
+<%- include("partials/header") -%>
+
+  <div class="container">
+    <div class="row">
+
+      <%    for(var i = 0; i < allLists.length; i++) { %>
+
+      <div class="col-lg-4 col-md-6 col-sm-12 listCollectionItem" >
+          <p class="collectionTitle titleText"> <%= allLists[i].name %></p>
+          <hr>
+
+          <div class="buttonBlock">
+            <form class="listForm" action="/<%= allLists[i].name %>" method="get">
+              <button class="btn selectButton" type="submit">Select</button>
+            </form>
+
+          </div>
+          <div class="buttonBlock">
+            <form class="listForm" action="/deleteList" method="post">
+              <button class="btn deleteButton" type="submit" name="ListID" value="<%= allLists[i]._id %>">Delete</button>
+            </form>
+          </div>
+
+      </div>
+
+      <%  } %>
+
+    </div>
+
+  </div>
+
+<%- include("partials/footer") -%>

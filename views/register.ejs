@@ -1,0 +1,41 @@
+<%- include('partials/limitedHeader') %>
+<div class="container mt-5">
+
+  <div class="box titleText" id="heading">
+    <h1> Register </h1>
+  </div>
+  <div class="reglogBox">
+    <div class="reglogInner">
+  
+      <form action="/register" method="POST">
+        <div class="form-group">
+
+          <input type="email" class="form-control nav-item" name="username" placeholder="email" required>
+        </div>
+        <div class="form-group">
+
+          <input type="" class="form-control nav-item" name="realName" placeholder="name" required>
+        </div>
+        <div class="form-group">
+
+          <input type="password" class="form-control nav-item" name="password" placeholder="password" required>
+        </div>
+        <button type="submit" class="btn btn-block btn-dark nav-item">Register</button>
+      </form>
+      <hr>
+      <a class="btn btn-block btn-social btn-google nav-item" href="/auth/google" role="button">
+        <i class="fab fa-google"></i>
+        Sign Up with Google
+      </a>
+        <p class="nav-item">Already have an account? <a href="/login">Login!</a></p>
+      
+    </div>
+
+    </div>
+
+
+
+
+</div>
+
+<%- include('partials/footer') %>

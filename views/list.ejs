@@ -1,0 +1,53 @@
+<%- include("partials/header") -%>
+
+  <div class="box titleText" id="heading">
+    <h1> <%= listTitle %> </h1>
+  </div>
+
+  <div class="box">
+
+  <% newListItems.forEach(function(item) { %>
+    <div class="item">
+
+      <form class="inline" action="/delete" method="post">
+        <button type="button" class="button btn " name="deleteButton" value="<%=item._id%>" onclick="this.form.submit()"><i class="fas fa-trash-alt"></i></button>
+        <input type="hidden" name="deleteButton" value="<%=item._id%>">
+        <input type="hidden" name="listName" value="<%= listTitle %>"></input>
+
+</form>
+
+    <form class="inline" action="/tasks" method="post">
+
+        <% if(item.completed === false) {%>
+            <input class="inline" type="checkbox"  onclick="this.form.submit()">
+      <%  } else { %>
+        <input class="inline" type="checkbox" checked="true" onclick="this.form.submit()">
+      <%  } %>
+
+      <input type="hidden" name="listName" value="<%= listTitle %>"></input>
+      <input type="hidden" name="outcome" value="<%= item.completed %>"></input>
+      <input type="hidden" name="itemID" value="<%=item._id%>"></input>
+    </form>
+
+    
+      <% if(item.completed === false) {%>
+          <p class="taskText"><%=  item.name  %></p>
+    <%  } else { %>
+      <p class="taskText crossedOut"><%=  item.name  %></p>
+    <%  } %>
+
+
+
+
+
+    </div>
+
+
+    <% }) %>
+      <form class="item" action="/" method="post">
+        <input class="textInputSize" type="text" name="newItem" placeholder="New Item" autocomplete="off">
+        <button class="addTaskButton" type="submit" name="list" value = "<%= listTitle %>"><i class="fas fa-plus-square"></i></button>
+      </form>
+  </div>
+
+<%- include("partials/footer") -%>

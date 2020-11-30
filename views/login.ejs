@@ -1,0 +1,34 @@
+<%- include('partials/limitedHeader') %>
+
+<div class="container mt-5">
+  <div class="box titleText" id="heading">
+    <h1> Log In </h1>
+  </div>
+  <div class="reglogBox">
+    <div class="reglogInner">
+     
+      <form action="/login" method="POST">
+        <div class="form-group">
+
+          <input type="email" class="form-control nav-item" name="username" placeholder="email" required>
+        </div>
+        <div class="form-group">
+
+          <input type="password" class="form-control nav-item" name="password" placeholder="password" required>
+        </div>
+        <button type="submit" class="btn btn-block btn-dark nav-item">Log In</button>
+      </form>
+      <hr>
+      <a class="btn btn-block btn-social btn-google nav-item" href="/auth/google" role="button">
+        <i class="fab fa-google"></i>
+        Sign In with Google
+      </a>
+        <p class="nav-item">Don't have an account yet? <a href="/register">Register Now!</a></p>
+        <p class="nav-item text-danger"> <%=errorMsg%> </p>
+        
+    </div>
+
+    </div>
+</div>
+
+<%- include('partials/footer') %>
