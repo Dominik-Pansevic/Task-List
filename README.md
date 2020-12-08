@@ -6,7 +6,6 @@ A web application for keeping track of your daily tasks. The user can create tas
 <li>Google OAuth user login support.</li>
 <li>Data restriction based on the user.</li>
 <li>CRUD functionality for storing and maintaining lists, tasks & users.</li>
-<li>MongoDB (Atlas) database integration.</li>
+<li>MongoDB database integration.</li>
 <li>Mobile friendly & responsive design.</li>
-<li>Heroku server hosting.</li>
 <ul>
